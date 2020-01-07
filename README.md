@@ -15,7 +15,7 @@ Also different from training all the images at once for experiment by HCIILAB, s
 
 ## Train Models for Pytorch
 
-Different CNN models (net, Alexnet, Mobilenet, VGG, Resnet) in model folder are trained separately on fty and mty images to see their performance. I choose Smooth Mean Absolute Error as loss function and Adam optimizer with 0.0001 learning rate. When evaluating the model performance on validation and test data, the L1 Loss function is used to calculate the loss beteewn true label and prediction.
+Different CNN models (net, Alexnet, Mobilenet, VGG, Resnet) in model folder are trained separately on fty and mty images to see their performance. I choose Smooth Mean Absolute Error as loss function and Adam optimizer with 0.0001 learning rate. When evaluating the model performance on validation and test data, the L1 Loss function is used to calculate the loss between true label and prediction.The code is in code/train_model.py.
 
 After I trained different models and check their performance on the test dataset, I found that it does not seem that the deeper network will have better performance. Overall, the model VGG11 have the best performance on both dataset.
 
@@ -31,5 +31,11 @@ After I trained different models and check their performance on the test dataset
 
 The evaluation results (L1 Loss) of VGG11 model performing on fty and mty data are shown as follows: 
 ![alt text](https://github.com/bhy0v587/Face-Rating-project/blob/master/result.png)
+
+From the results, the model can predict face rating scores from 0 to 1 within the loss of about 7.5% for both male and female face, which means our model can evaluate beauty of the face accurately.
+
+The following shows the prediction for other Asian faces (including me):
+
+
 
 
