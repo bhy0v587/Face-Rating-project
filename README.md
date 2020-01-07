@@ -19,12 +19,13 @@ Different CNN models (net, Alexnet, Mobilenet, VGG, Resnet) in model folder are 
 
 After I trained different models and check their performance on the test dataset, I found that it does not seem that the deeper network will have better performance. Overall, the model VGG11 have the best performance on both dataset.
 
-### Requirements 
-*Python 2.7
-*Caffe
-*Numpy
-*Matplotlib
-*Scikit-image
+### Requirements
+- Python 3.7
+- Torch 1.3.1 
+- Numpy
+- Pandas
+- Matplotlib
+- Scikit-image
 
 ## Result
 
