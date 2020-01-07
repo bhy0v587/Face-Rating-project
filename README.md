@@ -32,7 +32,7 @@ After I trained different models and check their performance on the test dataset
 The evaluation results (L1 Loss) of VGG11 model performing on fty and mty data are shown as follows: 
 ![alt text](https://github.com/bhy0v587/Face-Rating-project/blob/master/result.png)
 
-From the results, the model can predict face rating scores from 0 to 1 within the loss of about 7.5% for both male and female face, which means our model can evaluate beauty of the face accurately.
+From the results, the model can predict face rating scores from 0 to 1 within the loss of about 7.5% for both male and female face, which means the error range between prediction score and true labels (from 0 to 1) are controlled within 0.075. Thus, it shows our model can evaluate beauty of the face accurately.
 
 The following shows the prediction for other Asian faces (including me):
 
