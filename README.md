@@ -29,6 +29,7 @@ After I trained different models and check their performance on the test dataset
 
 ## Result
 
-![alt text](https://github.com/bhy0v587/Face-Rating-project/blob/master/bhy.jpg)
+The evaluation results (L1 Loss) of VGG11 model performing on fty and mty data are shown as follows: 
+![alt text](https://github.com/bhy0v587/Face-Rating-project/blob/master/results.png)
 
 
