@@ -29,6 +29,6 @@ After I trained different models and check their performance on the test dataset
 
 ## Result
 
-![alt text](http://url/to/bhy.jpg)
+![alt text](https://github.com/bhy0v587/Face-Rating-project/blob/master/bhy.jpg)
 
 
