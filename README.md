@@ -37,17 +37,22 @@ From the results, the model can predict face rating scores from 0 to 1 within th
 The following shows the prediction for other Asian faces (including me):
 
 Beautiful woman:
+
 ![alt text](https://github.com/bhy0v587/Face-Rating-project/blob/master/test1.png)
 
 Normal woman:
+
 ![alt text](https://github.com/bhy0v587/Face-Rating-project/blob/master/test2.png)
 
 Handsome man:
+
 ![alt text](https://github.com/bhy0v587/Face-Rating-project/blob/master/test3.png)
 
 Normal man:
+
 ![alt text](https://github.com/bhy0v587/Face-Rating-project/blob/master/test4.png)
 
-Myself(normal?)
+Myself(normal?):
+
 ![alt text](https://github.com/bhy0v587/Face-Rating-project/blob/master/test5.png)
 
