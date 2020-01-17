@@ -12,11 +12,9 @@ from PIL import Image
 from torch.utils.data import Dataset, DataLoader
 import torchvision.transforms as transforms
 
-# borrowed from http://pytorch.org/tutorials/advanced/neural_style_tutorial.html
-# and http://pytorch.org/tutorials/beginner/data_loading_tutorial.html
-# define a training image loader that specifies transforms on images. See documentation for more details.
+# define a training image loader that specifies transforms on images. 
 train_transformer = transforms.Compose([
-    transforms.Resize(224),  # resize the image to 64x64 (remove if images are already 64x64)
+    transforms.Resize(224),  # resize the image to 224x224
     transforms.RandomHorizontalFlip(),   # randomly horizontally flip image
     transforms.ToTensor(),   # transform it into a torch tensor
     transforms.Normalize([0.485, 0.456, 0.406],
@@ -24,7 +22,7 @@ train_transformer = transforms.Compose([
 
 # loader for evaluation, no horizontal flip
 eval_transformer = transforms.Compose([
-    transforms.Resize((224,224)),  # resize the image to 64x64 (remove if images are already 64x64)
+    transforms.Resize((224,224)),  # resize the image to 224x224
     transforms.ToTensor(),    # transform it into a torch tensor
     transforms.Normalize([0.485, 0.456, 0.406],
                              [0.229, 0.224, 0.225]) ])  
@@ -96,10 +94,10 @@ def fetch_dataloader(types, data_dir):
             dataloaders[split] = dl
 
     return dataloaders
-#%%
 
-#show part of image and labels
-dataloaders = fetch_dataloader(['train', 'val'], 'data_dense/fty')
+#%%  show part of image and labels
+
+dataloaders = fetch_dataloader(['train', 'val'], 'data/fty')
 
 train_dl = dataloaders['train']
 val_dl = dataloaders['val']
