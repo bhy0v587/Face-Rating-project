@@ -8,7 +8,6 @@ import torch.optim as optim
 import model.net as net
 import model.Alexnet as alexnet
 import model.Resnet as resnet
-import model.Mobilenet as mobilenet
 import model.vgg as vgg
 import data_loader
 
@@ -16,12 +15,14 @@ import data_loader
 def evaluate_model(model, data_loader):
   print("Testing the network...")
   model.eval()
-  total_num   = 0
-  loss_num = 0.0
+  total_num = 0
+  loss1_num = 0.0
+  loss2_num = 0.0
   for val_iter, val_data in enumerate(data_loader):
     # Get one batch of test samples
     inputs, labels = val_data    
     bch = inputs.size(0)
+    #inputs = inputs.view(bch, -1) <-- We don't need to reshape inputs here (we are using CNNs).
 
     # Move inputs and labels into GPU
     inputs = inputs.cuda()
@@ -30,21 +31,18 @@ def evaluate_model(model, data_loader):
     # Forward
     outputs = model(inputs)   
 
-    # Use L1Loss to calculate loss
-    loss = np.sum(np.absolute(outputs.cpu().detach().numpy().flatten() - labels.cpu().detach().numpy()))
-
-    # Show one prediction
-    if total_num == 0:
-        print("True label:\n", labels)
-        print("Prediction:\n", outputs.reshape(-1))
-        
-    loss_num+= loss
+    mae_loss = np.sum(np.absolute(outputs.cpu().detach().numpy().flatten() - labels.cpu().detach().numpy()))
+    rmse_loss = np.sum(np.square(outputs.cpu().detach().numpy().flatten() - labels.cpu().detach().numpy()))
+    
+    #Record test result
+    loss1_num+= mae_loss
+    loss2_num+= rmse_loss
     total_num+= bch
-  
-  # Print loss between 0% to 100%
-  print("LOSS: "+"%.2f"%(loss_num*100/float(total_num)))
-  
-#%%
+        
+  #model.train()
+  #print(total_num)
+  print("MAE_LOSS: "+"%.4f"%(loss1_num/float(total_num)))
+  print("RMSE_LOSS: "+"%.4f"%(np.sqrt(loss2_num/float(total_num))))
   
 def train_model(model, train_loader, val_loader, test_loader, loss_func, optimizer, epochs=25):
     
@@ -91,14 +89,13 @@ def train_model(model, train_loader, val_loader, test_loader, loss_func, optimiz
         
         if epoch%50 == 49:
             evaluate_model(model, test_loader)
-        
-    # Save if the model has best accuracy till now
-    torch.save(model, os.path.join('model2','_model_mty_'+str(epoch+1)+'.pt'))
+            # Save if the model has best accuracy till now
+            torch.save(model, os.path.join('model2','_model_fty_'+str(epoch+1)+'.pt'))
+    
     
 #%%
 model = net.Net().cuda()
 model = alexnet.AlexNet().cuda()
-model = mobilenet.mobilenet_v2().cuda()
 model = resnet.resnet18().cuda() 
 model = vgg.vgg11().cuda()
 
@@ -108,7 +105,7 @@ loss_func = nn.SmoothL1Loss()
 # Optimizer
 optimizer = optim.Adam(model.parameters(), lr=0.0001)
 
-data_dense = os.path.join('data_701515','mty')
+data_dense = os.path.join('data','fty')
 
 dataloaders = data_loader.fetch_dataloader(['train', 'val', 'test'], data_dense)
 
@@ -116,7 +113,7 @@ train_dl = dataloaders['train']
 val_dl = dataloaders['val']
 test_dl = dataloaders['test']
 
-epochs = 200
+epochs = 1000
 
 train_model(model, train_dl, val_dl, test_dl, loss_func, optimizer, epochs)
 
