@@ -2,7 +2,7 @@
 
 This is a project developed for rating face beauty for Asian people.
 
-## Data
+## Prepare Data
 
 For training and testing dataset, they consist of two parts.
 
@@ -36,7 +36,7 @@ After I trained different models and check their performance on the test dataset
 - Matplotlib
 - Scikit-image
 
-## Result
+## Results
 
 The evaluation results (MAE and RMSE) of VGG11 model performing on fty data are shown as follows: 
 
