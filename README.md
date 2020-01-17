@@ -8,7 +8,6 @@ For training and testing dataset, they consist of two parts.
 
 Firstly, I choosed a new diverse benchmark dataset SCUT-FBP5500 created by HCIILAB as the orignial dataset.
 The link of dataset is here: https://github.com/HCIILAB/SCUT-FBP5500-Database-Release
-
 The SCUT-FBP5500 dataset has totally 5500 frontal faces with diverse properties (male/female, Asian/Caucasian, ages) and diverse labels (face landmarks, beauty scores within [1,~5], beauty score distribution). 
 
 In the dataset, all the images are labeled with beauty scores ranging from [1, 5] by totally 60 volunteers, I average the rating scores of 60 interviewers for one image(except max and min value) and spread them from 0 to 1 (0 means ungly and 1 means beautiful) for easier data processing in code/build_dataset.py.
@@ -17,9 +16,9 @@ Also different from training all the images at once for experiment by HCIILAB, s
 
 After training and testing on the orignial dataset, I analyzed the pattern of the orignial dataset and the results on fty and mty data, I found the original dataset is not so evenly distributed and the number of images with high beauty scores are not big enough. Thus, the trained model is not robust enough for evaluating or classify beautiful, normal and ugly face.
 
-Secondly, in order to fix the problems above, I enlarged original dataset by adding other 2000 images (normal faces from AAF dataset (link:https://github.com/JingchunCheng/All-Age-Faces-Dataset) and star faces (http://www.seeprettyface.com/mydataset_page3.html)).Then some preprocessing are done to crop or add boarder to images in code/build_dataset.py.
+Secondly, in order to fix the problems above, I enlarged original dataset by adding other 2000 images (normal faces from AAF dataset (link:https://github.com/JingchunCheng/All-Age-Faces-Dataset) and star faces (http://www.seeprettyface.com/mydataset_page3.html)). Then some preprocessing are done to crop or add boarder to images in code/build_dataset.py.
 
-Since these images have no labels, with the help of 5 lab members (include me) I collect the beauty scores and nomalize the labels.
+Since these images have no labels, with the help of 5 lab members (include me) I collected the beauty scores and nomalized the labels.
 
 Btw, the whole dataset are divided into 70% train dataset, 15% validation dataset and 15% test dataset.
 
