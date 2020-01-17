@@ -1,5 +1,5 @@
-# 750 ftw and 750 mtw, 2000 fty and 2000 mty
-# divide them into 60% train(3300), 20% val(1100), 20% test(1100)
+# For each gender, I create two folders named fty and mty with images and label data
+# divide them into 70% train(2200), 15% val(500), 15% test(500)
 # add the corresponding csv file train_data.csv, val_data.csv, test_data.csv
 
 import os
