@@ -1,6 +1,6 @@
 # Face-Rating-project
 
-This is a project developed for rating face score for Asian people.
+This is a project developed for rating face beauty for Asian people.
 
 ## Data
 
