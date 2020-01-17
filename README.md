@@ -43,25 +43,26 @@ The evaluation results (L1 Loss) of VGG11 model performing on fty and mty data a
 
 From the results, the model can predict face rating scores from 0 to 1 within the loss of about 7.5% for both male and female face, which means the error range between prediction score and true labels (from 0 to 1) are controlled within 0.075. Since there is no fixed scoring standard for the face rating, everyone may have his own standard for beauty and ugliness. Thus, the results within such error range show that our model can evaluate beauty of the face accurately to some extent.
 
-The following shows the prediction for other Asian faces (including me):
+The following shows the prediction for other Asian faces:
 
 Beautiful woman:
 
-![alt text](https://github.com/bhy0v587/Face-Rating-project/blob/master/test1.png)
+![alt text](https://github.com/bhy0v587/Face-Rating-project/blob/master/test11.png)
+![alt text](https://github.com/bhy0v587/Face-Rating-project/blob/master/test12.png)
+![alt text](https://github.com/bhy0v587/Face-Rating-project/blob/master/test13.png)
 
 Normal woman:
 
-![alt text](https://github.com/bhy0v587/Face-Rating-project/blob/master/test2.png)
+![alt text](https://github.com/bhy0v587/Face-Rating-project/blob/master/test21.png)
+![alt text](https://github.com/bhy0v587/Face-Rating-project/blob/master/test22.png)
 
 Handsome man:
 
-![alt text](https://github.com/bhy0v587/Face-Rating-project/blob/master/test3.png)
+![alt text](https://github.com/bhy0v587/Face-Rating-project/blob/master/test31.png)
 
 Normal man:
 
-![alt text](https://github.com/bhy0v587/Face-Rating-project/blob/master/test4.png)
+![alt text](https://github.com/bhy0v587/Face-Rating-project/blob/master/test41.png)
+![alt text](https://github.com/bhy0v587/Face-Rating-project/blob/master/test42.png)
 
-Myself(normal?):
-
-![alt text](https://github.com/bhy0v587/Face-Rating-project/blob/master/test5.png)
 
