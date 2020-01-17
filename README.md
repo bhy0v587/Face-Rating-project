@@ -24,9 +24,9 @@ Btw, the whole dataset are divided into 70% train dataset, 15% validation datase
 
 ## Train Models
 
-Different CNN models (Alexnet, VGG, Resnet) in model folder are trained separately on fty and mty images to see their performance. I choose SmoothL1Loss as loss function and Adam optimizer with 0.0001 learning rate. When evaluating the model performance on validation and test data, the L1 and L2 Loss functions are used to calculate the loss between true label and prediction.The code can be found in code/train_model.py.
+Different CNN models (AlexNet, VGG11, ResNet18) in model folder are trained separately on fty and mty images to see their performance. I choose SmoothL1Loss as loss function and Adam optimizer with 0.0001 learning rate. When evaluating the model performance on validation and test data, the maximum absolute error (MAE) and root mean square error (RMSE) are used to calculate the loss between true label and prediction. The code can be found in code/train_model.py.
 
-After I trained different models and check their performance on the test dataset, I found that it does not seem that the deeper network will have better performance. Overall, the model VGG11 have the best performance on both dataset.
+After I trained different models and check their performance on the test dataset, I found that it does not seem that the deeper network will have better performance. Overall, the model VGG11 have the best performance on both dataset. (Or the reason may be that I did not set appropriate hyperparameters for other networks, I think more attempts are required)
 
 ### Requirements
 - Python 3.7
@@ -38,10 +38,10 @@ After I trained different models and check their performance on the test dataset
 
 ## Result
 
-The evaluation results (L1 Loss) of VGG11 model performing on fty and mty data are shown as follows: 
+The evaluation results (MAE and RMSE) of VGG11 model performing on fty data are shown as follows: 
 ![alt text](https://github.com/bhy0v587/Face-Rating-project/blob/master/result.png)
 
-From the results, the model can predict face rating scores from 0 to 1 within the loss of about 7.5% for both male and female face, which means the error range between prediction score and true labels (from 0 to 1) are controlled within 0.075. Since there is no fixed scoring standard for the face rating, everyone may have his own standard for beauty and ugliness. Thus, the results within such error range show that our model can evaluate beauty of the face accurately to some extent.
+From the results, the model can predict face rating scores from 0 to 1 within the loss of about 6.5% for both male and female face, which means the error range between prediction score and true labels (from 0 to 1) are controlled within 0.065. Since there is no fixed scoring standard for the face rating, everyone may have his own standard for beauty and ugliness. Thus, the results within such error range show that our model can evaluate and distinguish beauty of the face accurately to some extent.
 
 ## Application
 The following shows the prediction for other Asian faces (with makeup, edit), which also shows that our model not only has the capability of recognizing and distinguishing beauty but also evaluating the beauty of the same person with makeup or not.
