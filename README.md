@@ -24,7 +24,7 @@ Btw, the whole dataset are divided into 70% train dataset, 15% validation datase
 
 ## Train Models
 
-Different CNN models (Alexnet, VGG, Resnet) in model folder are trained separately on fty and mty images to see their performance. I choose Smooth Mean Absolute Error as loss function and Adam optimizer with 0.0001 learning rate. When evaluating the model performance on validation and test data, the L1 and L2 Loss functions are used to calculate the loss between true label and prediction.The code is in code/train_model.py.
+Different CNN models (Alexnet, VGG, Resnet) in model folder are trained separately on fty and mty images to see their performance. I choose SmoothL1Loss as loss function and Adam optimizer with 0.0001 learning rate. When evaluating the model performance on validation and test data, the L1 and L2 Loss functions are used to calculate the loss between true label and prediction.The code can be found in code/train_model.py.
 
 After I trained different models and check their performance on the test dataset, I found that it does not seem that the deeper network will have better performance. Overall, the model VGG11 have the best performance on both dataset.
 
@@ -43,15 +43,16 @@ The evaluation results (L1 Loss) of VGG11 model performing on fty and mty data a
 
 From the results, the model can predict face rating scores from 0 to 1 within the loss of about 7.5% for both male and female face, which means the error range between prediction score and true labels (from 0 to 1) are controlled within 0.075. Since there is no fixed scoring standard for the face rating, everyone may have his own standard for beauty and ugliness. Thus, the results within such error range show that our model can evaluate beauty of the face accurately to some extent.
 
-The following shows the prediction for other Asian faces:
+## Application
+The following shows the prediction for other Asian faces (with makeup, edit), which also shows that our model not only has the capability of recognizing and distinguishing beauty but also evaluating the beauty of the same person with makeup or not.
 
-Beautiful woman:
+Beautiful woman (without makeup, with makeup, with edit):
 
 ![alt text](https://github.com/bhy0v587/Face-Rating-project/blob/master/test11.png)
 ![alt text](https://github.com/bhy0v587/Face-Rating-project/blob/master/test12.png)
 ![alt text](https://github.com/bhy0v587/Face-Rating-project/blob/master/test13.png)
 
-Normal woman:
+Normal woman (without makeup, with makeup):
 
 ![alt text](https://github.com/bhy0v587/Face-Rating-project/blob/master/test21.png)
 ![alt text](https://github.com/bhy0v587/Face-Rating-project/blob/master/test22.png)
@@ -60,7 +61,7 @@ Handsome man:
 
 ![alt text](https://github.com/bhy0v587/Face-Rating-project/blob/master/test31.png)
 
-Normal man:
+Normal man (without makeup, with makeup?):
 
 ![alt text](https://github.com/bhy0v587/Face-Rating-project/blob/master/test41.png)
 ![alt text](https://github.com/bhy0v587/Face-Rating-project/blob/master/test42.png)
