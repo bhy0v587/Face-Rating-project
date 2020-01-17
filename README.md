@@ -39,7 +39,8 @@ After I trained different models and check their performance on the test dataset
 ## Result
 
 The evaluation results (MAE and RMSE) of VGG11 model performing on fty data are shown as follows: 
-![alt text](https://github.com/bhy0v587/Face-Rating-project/blob/master/result.png)
+
+![alt text](https://github.com/bhy0v587/Face-Rating-project/blob/master/result.jpg)
 
 From the results, the model can predict face rating scores from 0 to 1 within the loss of about 6.5% for both male and female face, which means the error range between prediction score and true labels (from 0 to 1) are controlled within 0.065. Since there is no fixed scoring standard for the face rating, everyone may have his own standard for beauty and ugliness. Thus, the results within such error range show that our model can evaluate and distinguish beauty of the face accurately to some extent.
 
