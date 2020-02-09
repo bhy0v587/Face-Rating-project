@@ -77,7 +77,4 @@ model = torch.load(model_path)
 
 evaluate_model(model, test_dl)
 
-#evaluate_image_gender(model, 'bhy.jpg')
-#evaluate_image_gender(model, 'test.jpg')
-
 
