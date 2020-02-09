@@ -28,7 +28,7 @@ eval_transformer = transforms.Compose([
                              [0.229, 0.224, 0.225]) ])  
 
 
-class SIGNSDataset(Dataset):
+class FACESDataset(Dataset):
    
     def __init__(self, data_dir, transform):
         """
@@ -85,10 +85,10 @@ def fetch_dataloader(types, data_dir):
             path = os.path.join(data_dir, "{}".format(split))
             # use the train_transformer if training data, else use eval_transformer without random flip
             if split == 'train':
-                dl = DataLoader(SIGNSDataset(path, train_transformer), batch_size=32, shuffle=True,
+                dl = DataLoader(FACESDataset(path, train_transformer), batch_size=32, shuffle=True,
                                         num_workers=0)
             else:
-                dl = DataLoader(SIGNSDataset(path, eval_transformer), batch_size=32, shuffle=False,
+                dl = DataLoader(FACESDataset(path, eval_transformer), batch_size=32, shuffle=False,
                                 num_workers=0)
 
             dataloaders[split] = dl
