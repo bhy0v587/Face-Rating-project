@@ -65,7 +65,7 @@ def evaluate_image(model, image_name):
     
 #%% 
 
-data_dense = os.path.join('data_dense','fty')
+data_dense = os.path.join('data','fty')
 
 dataloaders = data_loader.fetch_dataloader(['test'], data_dense)
 
