@@ -40,7 +40,7 @@ After I trained different models and check their performance on the test dataset
 
 The evaluation results (MAE and RMSE) of VGG11 model performing on fty data are shown as follows: 
 
-![alt text](https://github.com/bhy0v587/Face-Rating-project/blob/master/result.png)
+![alt text](https://github.com/bhy0v587/Face-Rating-project/blob/master/images/result.png)
 
 From the results, the model can predict face rating scores from 0 to 1 within the loss of about 6.08% for both male and female face, which means the error range between prediction score and true labels (from 0 to 1) are controlled within about 0.06. Since there is no fixed scoring standard for the face rating, everyone may have his own standard for beauty and ugliness. Thus, the results within such error range show that our model can evaluate and distinguish beauty of the face accurately to some extent.
 
@@ -49,22 +49,22 @@ The following shows the prediction for other Asian faces (with makeup, edit), wh
 
 Beautiful woman (without makeup, with makeup, with edit):
 
-![alt text](https://github.com/bhy0v587/Face-Rating-project/blob/master/test11.png)
-![alt text](https://github.com/bhy0v587/Face-Rating-project/blob/master/test12.png)
-![alt text](https://github.com/bhy0v587/Face-Rating-project/blob/master/test13.png)
+![alt text](https://github.com/bhy0v587/Face-Rating-project/blob/master/images/test11.png)
+![alt text](https://github.com/bhy0v587/Face-Rating-project/blob/master/images/test12.png)
+![alt text](https://github.com/bhy0v587/Face-Rating-project/blob/master/images/test13.png)
 
 Normal woman (without makeup, with makeup):
 
-![alt text](https://github.com/bhy0v587/Face-Rating-project/blob/master/test21.png)
-![alt text](https://github.com/bhy0v587/Face-Rating-project/blob/master/test22.png)
+![alt text](https://github.com/bhy0v587/Face-Rating-project/blob/master/images/test21.png)
+![alt text](https://github.com/bhy0v587/Face-Rating-project/blob/master/images/test22.png)
 
 Handsome man:
 
-![alt text](https://github.com/bhy0v587/Face-Rating-project/blob/master/test31.png)
+![alt text](https://github.com/bhy0v587/Face-Rating-project/blob/master/images/test31.png)
 
 Normal man (without makeup, with makeup?):
 
-![alt text](https://github.com/bhy0v587/Face-Rating-project/blob/master/test41.png)
-![alt text](https://github.com/bhy0v587/Face-Rating-project/blob/master/test42.png)
+![alt text](https://github.com/bhy0v587/Face-Rating-project/blob/master/images/test41.png)
+![alt text](https://github.com/bhy0v587/Face-Rating-project/blob/master/images/test42.png)
 
 
